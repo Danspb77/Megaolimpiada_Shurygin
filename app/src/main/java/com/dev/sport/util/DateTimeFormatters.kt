@@ -1,5 +1,7 @@
 package com.dev.sport.util
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import java.time.LocalDateTime
 import java.time.OffsetDateTime
 import java.time.ZonedDateTime
@@ -7,9 +9,12 @@ import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
 
 object DateTimeFormatters {
+    @RequiresApi(Build.VERSION_CODES.O)
     private val outputFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")
+    @RequiresApi(Build.VERSION_CODES.O)
     private val apiFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private val inputFormatters = listOf(
         DateTimeFormatter.ISO_OFFSET_DATE_TIME,
         DateTimeFormatter.ISO_ZONED_DATE_TIME,
