@@ -10,7 +10,15 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.rounded.Flag
+import androidx.compose.material.icons.rounded.Home
+import androidx.compose.material.icons.rounded.People
+import androidx.compose.material.icons.rounded.SportsSoccer
 import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -49,10 +57,10 @@ fun StockEventCard(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                IconBadge(url = event.countryFlag)
-                IconBadge(url = event.exchangeLogo)
-                IconBadge(url = event.issuerALogo)
-                IconBadge(url = event.issuerBLogo)
+                Icon(imageVector = Icons.Rounded.Flag, contentDescription = "Flag")
+                Icon(imageVector = Icons.Rounded.SportsSoccer, contentDescription = "SportsSoccer")
+                Icon(imageVector = Icons.Rounded.Home, contentDescription = "Home")
+                Icon(imageVector = Icons.Rounded.People, contentDescription = "People")
 
             }
             Spacer(modifier = Modifier.height(10.dp))
@@ -61,7 +69,7 @@ fun StockEventCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Home: ${(Random.nextFloat() * (0 until 3).random()).round(2)} • Away: ${(Random.nextFloat() * (0 until 3).random()).round(2)}  • Draw: ${(Random.nextFloat() * (0 until 3).random()).round(2)}",
+                    text = "Home: ${(Random.nextFloat() * (1 until 5).random()).round(2)} • Away: ${(Random.nextFloat() * (1 until 5).random()).round(2)}  • Draw: ${(Random.nextFloat() * (1 until 5).random()).round(2)}",
                     style = MaterialTheme.typography.bodyMedium
                 )
             }

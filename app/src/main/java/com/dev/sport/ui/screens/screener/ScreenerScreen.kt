@@ -50,7 +50,7 @@ fun ScreenerScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Market Screener") },
+                title = { Text("Football Screener") },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Back")

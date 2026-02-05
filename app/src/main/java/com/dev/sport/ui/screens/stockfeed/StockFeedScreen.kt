@@ -35,7 +35,7 @@ fun StockFeedScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Upcoming Stock Events") },
+                title = { Text("Upcoming Footbal Events") },
                 actions = {
                     IconButton(onClick = onOpenScreener) {
                         Icon(imageVector = Icons.Default.Search, contentDescription = "Search")
