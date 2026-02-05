@@ -23,6 +23,8 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.dev.sport.R
 import com.dev.sport.domain.model.StockEvent
+import kotlin.math.round
+import kotlin.random.Random
 
 @Composable
 fun StockEventCard(
@@ -53,15 +55,31 @@ fun StockEventCard(
                 IconBadge(url = event.issuerBLogo)
 
             }
+            Spacer(modifier = Modifier.height(10.dp))
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Home: ${(Random.nextFloat() * (0 until 3).random()).round(2)} • Away: ${(Random.nextFloat() * (0 until 3).random()).round(2)}  • Draw: ${(Random.nextFloat() * (0 until 3).random()).round(2)}",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
         }
     }
+}
+
+fun Float.round(decimals: Int): Double {
+    var multiplier = 1.0
+    repeat(decimals) { multiplier *= 10 }
+    return round(this * multiplier) / multiplier
 }
 
 @Composable
 private fun IconBadge(url: String?) {
     if (url.isNullOrBlank()) {
         Image(
-            painter = painterResource(id = R.drawable.sports_soccer_24px),
+            painter = painterResource(id = R.drawable.ic_launcher_foreground),
             contentDescription = null,
             modifier = Modifier
                 .size(28.dp)
